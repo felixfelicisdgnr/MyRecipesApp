@@ -27,7 +27,7 @@ class CategoriesAdapter : ListAdapter<Category, CategoriesAdapter.CategoryViewHo
             with(binding) {
                 tvNameCategory.text = productCategory.strCategory
 
-                Glide.with(imgCategory).load(productCategory.strCategory).into(imgCategory)
+                Glide.with(imgCategory).load(productCategory.strCategoryThumb).into(imgCategory)
 
                 root.setOnClickListener { onClick(productCategory) }
             }

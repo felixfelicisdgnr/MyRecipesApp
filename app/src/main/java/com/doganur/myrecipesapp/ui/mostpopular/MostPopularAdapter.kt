@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.mostpopular
+package com.doganur.myrecipesapp.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,24 +9,22 @@ import com.bumptech.glide.Glide
 import com.doganur.myrecipesapp.databinding.PopularItemBinding
 import com.doganur.myrecipesapp.db.model.MealsByCategory
 
-class MostPopularAdapter : ListAdapter<MealsByCategory, MostPopularAdapter.MostPopularViewHolder>(
+class MostPopularAdapter(
+    private val onPopularClick: (String) -> Unit
+) : ListAdapter<MealsByCategory, MostPopularAdapter.MostPopularViewHolder>(
     MostPopularDiffUtilCallback
 ) {
-
-    var onClick: (MealsByCategory) -> Unit = {}
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MostPopularViewHolder {
         val binding = PopularItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MostPopularViewHolder(binding, onClick)
+        return MostPopularViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MostPopularViewHolder, position: Int) {
         holder.bind(currentList[position])
     }
 
-    class MostPopularViewHolder(
-        private val binding: PopularItemBinding,
-        private val onClick: (MealsByCategory) -> Unit
+    inner class MostPopularViewHolder(
+        private val binding: PopularItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(mostPopularProduct: MealsByCategory) {
@@ -34,7 +32,9 @@ class MostPopularAdapter : ListAdapter<MealsByCategory, MostPopularAdapter.MostP
             Glide.with(binding.imgPopularMealItems).load(mostPopularProduct.strMealThumb)
                 .into(binding.imgPopularMealItems)
 
-            binding.root.setOnClickListener { onClick(mostPopularProduct) }
+            binding.root.setOnClickListener {
+                mostPopularProduct.idMeal?.let(onPopularClick)
+            }
         }
     }
 }

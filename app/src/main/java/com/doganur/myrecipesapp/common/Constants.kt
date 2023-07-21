@@ -2,6 +2,8 @@ package com.doganur.myrecipesapp.common
 
 object Constants {
 
+    const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
+
     const val GET_RANDOM_MEAL = "random.php"
 
     const val GET_MEAL_DETAILS = "lookup.php?"

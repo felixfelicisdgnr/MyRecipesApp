@@ -6,38 +6,45 @@ import androidx.lifecycle.ViewModel
 import com.doganur.myrecipesapp.db.MealRepository
 import com.doganur.myrecipesapp.db.model.Category
 import com.doganur.myrecipesapp.db.model.Meal
+import com.doganur.myrecipesapp.db.model.MealsByCategory
 
 class HomeViewModel : ViewModel() {
 
     private val mealRepository = MealRepository()
 
-    private var _randomMealList = MutableLiveData<List<Meal>?>() //doldurdum
+    private var _randomMeal = MutableLiveData<Meal?>() //doldurdum
+
+    private var _popularMealList = MutableLiveData<List<MealsByCategory>?>()
 
     private var _categoriesMealList = MutableLiveData<List<Category>?>() //doldurdum
 
-    val randomMealList : LiveData<List<Meal>?> //dinledim
-        get() = _randomMealList
+    val randomMeal: LiveData<Meal?> //dinledim
+        get() = _randomMeal
 
-    val categoriesMealList : LiveData<List<Category>?>
+    val popularMealList: LiveData<List<MealsByCategory>?>
+        get() = _popularMealList
+
+    val categoriesMealList: LiveData<List<Category>?>
         get() = _categoriesMealList
 
-
-   /* init {
-        randomMeal()
-    } */
-
     init {
+        randomMeal()
+        popularMeal()
         categoriesMeal()
     }
 
-    /* fun randomMeal(){
+    private fun randomMeal() {
         mealRepository.getRandomMeal()
-        _randomMealList = mealRepository.randomMealList
-    } */
+        _randomMeal = mealRepository.randomMeal
+    }
 
-    fun categoriesMeal() {
+    private fun popularMeal() {
+        mealRepository.getPopularMeal()
+        _popularMealList = mealRepository.popularMealMutableList
+    }
+
+    private fun categoriesMeal() {
         mealRepository.getCategoriesMeal()
         _categoriesMealList = mealRepository.categoriesMealList
-
     }
 }

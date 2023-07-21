@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <LinearLayout
                 android:id="@+id/linearHeader"
                 android:layout_width="match_parent"
@@ -44,7 +43,6 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/search_item" />
-
             </LinearLayout>
 
             <TextView
@@ -99,15 +97,15 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvMealsPopular"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvOverPopular"
-                app:spanCount="3" />
+                 />
 
             <TextView
                 android:id="@+id/tvCategories"
