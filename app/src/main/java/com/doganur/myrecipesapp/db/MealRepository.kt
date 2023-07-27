@@ -18,11 +18,8 @@ class MealRepository {
     private val service = ApiUtils.mealApiService
 
     val randomMeal = MutableLiveData<Meal?>()
-
     val categoriesMealList = MutableLiveData<List<Category>?>()
-
-    val popularMealMutableList = MutableLiveData<List<MealsByCategory>?>()
-
+    val mealsByCategoryList = MutableLiveData<List<MealsByCategory>?>()
     val mealDetail = MutableLiveData<Meal?>()
 
     fun getRandomMeal() {
@@ -53,7 +50,6 @@ class MealRepository {
 
             override fun onFailure(call: Call<CategoryList>, t: Throwable) {
                 Log.d("Failure Categories", t.message.orEmpty())
-                categoriesMealList.value = null
             }
         })
     }
@@ -61,13 +57,11 @@ class MealRepository {
     fun getPopularMeal() {
         service.getMostPopularMeals("Seafood").enqueue(object : Callback<MealsByCategoryList> {
             override fun onResponse(
-                call: Call<MealsByCategoryList>,
-                response: Response<MealsByCategoryList>
+                call: Call<MealsByCategoryList>, response: Response<MealsByCategoryList>
             ) {
                 val popularMeals = response.body()?.meals
 
-                popularMealMutableList.value =
-                    if (popularMeals.isNullOrEmpty()) null else popularMeals
+                mealsByCategoryList.value = if (popularMeals.isNullOrEmpty()) null else popularMeals
             }
 
             override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {
@@ -79,8 +73,7 @@ class MealRepository {
     fun getMealDetail(id: String) {
         service.getMealDetail(id).enqueue(object : Callback<MealList> {
             override fun onResponse(
-                call: Call<MealList>,
-                response: Response<MealList>
+                call: Call<MealList>, response: Response<MealList>
             ) {
                 val meals = response.body()?.meals
 
@@ -90,6 +83,24 @@ class MealRepository {
             override fun onFailure(call: Call<MealList>, t: Throwable) {
                 Log.d("failure Popular Meals", t.message.orEmpty())
             }
+        })
+    }
+
+    fun getMealsByCategory(categoryName : String) {
+        service.getMealsByCategory(categoryName).enqueue(object : Callback<MealsByCategoryList>{
+            override fun onResponse(
+                call: Call<MealsByCategoryList>,
+                response: Response<MealsByCategoryList>
+            ) {
+                val categoriesMealsDetails = response.body()?.meals
+
+                mealsByCategoryList.value = if (categoriesMealsDetails.isNullOrEmpty()) null else categoriesMealsDetails
+            }
+
+            override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {
+                Log.d("failure Popular Meals", t.message.orEmpty())
+            }
+
         })
     }
 }

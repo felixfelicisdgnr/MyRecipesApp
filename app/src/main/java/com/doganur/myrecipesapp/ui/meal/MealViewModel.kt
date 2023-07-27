@@ -17,6 +17,10 @@ class MealViewModel(
     val mealDetail: LiveData<Meal?> //dinledim
         get() = _mealDetail
 
+    private var _clickYoutube = MutableLiveData<String?>()
+    val clickYoutube : LiveData<String?>
+        get() = _clickYoutube
+
     init {
         savedStateHandle.get<String>("mealId")?.let {
             getMealDetail(it)
@@ -26,5 +30,9 @@ class MealViewModel(
     private fun getMealDetail(mealId: String) {
         mealRepository.getMealDetail(mealId)
         _mealDetail = mealRepository.mealDetail
+    }
+
+    fun onYoutubeClick() {
+        _clickYoutube.value = mealDetail.value?.strYoutube
     }
 }

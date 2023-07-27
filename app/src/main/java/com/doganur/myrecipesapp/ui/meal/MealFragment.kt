@@ -4,9 +4,10 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.doganur.myrecipesapp.R
 import com.doganur.myrecipesapp.common.viewBinding
 import com.doganur.myrecipesapp.databinding.FragmentMealBinding
@@ -21,16 +22,30 @@ class MealFragment : Fragment(R.layout.fragment_meal) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding) {
-
-        }
+        /* binding.imgYoutube.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(meal?.strYoutube.toString()))
+                    startActivity(intent)
+          } */
 
         initObservers()
     }
 
     private fun initObservers() {
-        mealViewModel.mealDetail.observe(viewLifecycleOwner) { meal ->
-            binding.collapsingToolbar.title = meal?.strMeal
+
+        with(binding) {
+            mealViewModel.mealDetail.observe(viewLifecycleOwner) { meal ->
+
+                Glide.with(imgMealDetail).load(meal?.strMealThumb).into(imgMealDetail)
+
+                tvDetailCategories.text = meal?.strCategory
+                tvDetailArea.text = meal?.strArea
+                tvStepsInstructions.text = meal?.strInstructions
+
+                collapsingToolbar.title = meal?.strMeal
+                collapsingToolbar.setCollapsedTitleTextColor(resources.getColor(R.color.white))
+                collapsingToolbar.setExpandedTitleColor(resources.getColor(R.color.white))
+
+            }
         }
     }
 }

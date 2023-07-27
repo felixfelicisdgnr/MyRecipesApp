@@ -12,6 +12,9 @@
         <action
             android:id="@+id/homeToMeal"
             app:destination="@id/mealFragment" />
+        <action
+            android:id="@+id/categoryToCategories"
+            app:destination="@id/categoryMealsFragment" />
     </fragment>
 
     <fragment
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_meal" >
         <argument
             android:name="mealId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryMealsFragment"
+        android:name="com.doganur.myrecipesapp.ui.categorymeals.CategoryMealsFragment"
+        android:label="fragment_category_meals"
+        tools:layout="@layout/fragment_category_meals" >
+        <argument
+            android:name="categoriesId"
             app:argType="string" />
     </fragment>
 </navigation>

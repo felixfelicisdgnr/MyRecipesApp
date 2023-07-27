@@ -25,4 +25,7 @@ interface MealApiService {
     @GET(Constants.GET_MEAL_DETAILS)
     fun getMealDetail(@Query("i") id: String): Call<MealList>
 
+    @GET(Constants.GET_MEALS_BY_CATEGORY)
+    fun getMealsByCategory(@Query("c") categoryName: String) : Call<MealsByCategoryList>
+
 }

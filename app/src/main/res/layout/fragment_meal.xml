@@ -19,7 +19,8 @@
             android:layout_height="match_parent"
             app:contentScrim="@color/accent"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:title="Meal Name">
+            app:title="Meal Name"
+            >
 
             <ImageView
                 android:id="@+id/imgMealDetail"
@@ -33,7 +34,8 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
-                app:layout_collapseMode="pin" />
+                app:layout_collapseMode="pin"
+                />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
