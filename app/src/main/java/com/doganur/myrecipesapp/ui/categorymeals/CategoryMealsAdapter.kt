@@ -34,7 +34,7 @@ class CategoryMealsAdapter(
                 tvMealName.text = mealsByCategoryProduct.strMeal
 
                 root.setOnClickListener {
-                    mealsByCategoryProduct.idMeal?.let { onCategoryMealsClick }
+                    mealsByCategoryProduct.idMeal?.let ( onCategoryMealsClick )
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.doganur.myrecipesapp.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -40,14 +41,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         }
 
-        homeViewModel.navigateToMealsByCategory.observe(viewLifecycleOwner) { id ->
-            id?.let {
-                onCategoriesClick(it)
-                homeViewModel.onMealsByCategoriesClick()
-                homeViewModel.setNavigateNull()
-            }
-        }
-
         homeViewModel.mealsByCategoryList.observe(viewLifecycleOwner) {
             if (it != null) {
                 mostPopularAdapter.submitList(it)
@@ -72,8 +65,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         findNavController().navigate(action)
     }
 
-    private fun onCategoriesClick(categoriesId: String) {
+    private fun onCategoriesClick(categoriesId : String){
         val action = HomeFragmentDirections.categoryToCategories(categoriesId)
         findNavController().navigate(action)
+        Log.e("ZIKKIMZIKKIM", categoriesId)
     }
 }
+
+

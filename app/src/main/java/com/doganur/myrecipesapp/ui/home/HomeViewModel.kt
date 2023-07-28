@@ -28,14 +28,6 @@ class HomeViewModel : ViewModel() {
     val navigateToDetail: LiveData<String?>
         get() = _navigateToDetail
 
-    private var _navigateToMealsByCategory = MutableLiveData<String?>()
-    val navigateToMealsByCategory : LiveData<String?>
-        get() = _navigateToMealsByCategory
-
-    private var _categoryMealName = MutableLiveData<Category?>()
-    val categoryMealName : LiveData<Category?>
-        get() = _categoryMealName
-
     init {
         randomMeal()
         popularMeal()
@@ -59,10 +51,6 @@ class HomeViewModel : ViewModel() {
 
     fun onRandomClick() {
         _navigateToDetail.value = randomMeal.value?.idMeal
-    }
-
-    fun onMealsByCategoriesClick() {
-        _navigateToMealsByCategory.value = categoryMealName.value?.strCategory//allahın cezası id ye ulaşmam lazım
     }
 
     fun setNavigateNull() {

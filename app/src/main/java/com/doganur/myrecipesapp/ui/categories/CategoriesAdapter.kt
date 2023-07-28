@@ -11,9 +11,8 @@ import com.doganur.myrecipesapp.databinding.CategoryItemBinding
 import com.doganur.myrecipesapp.db.model.Category
 
 class CategoriesAdapter(
-    private val onCategoriesClick: (String) -> Unit
+    private val onCategoriesClick : (String) -> Unit
 ) : ListAdapter<Category, CategoriesAdapter.CategoryViewHolder>(CategoryDiff()) {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val binding =
@@ -35,8 +34,8 @@ class CategoriesAdapter(
                 Glide.with(imgCategory).load(productCategory.strCategoryThumb).into(imgCategory)
 
                 root.setOnClickListener {
-                    productCategory.strCategory?.let { onCategoriesClick }
-                    Log.e("TESTCATEGORIESADAPTER", productCategory.strCategory.toString())
+                    productCategory.strCategory?.let ( onCategoriesClick ) //geber zıkkım verisi viewmodela git
+                    Log.e("TEST CATEGORIES ADAPTER", productCategory.strCategory.toString())
                 }
             }
         }

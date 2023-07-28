@@ -33,7 +33,7 @@ class MostPopularAdapter(
                 .into(binding.imgPopularMealItems)
 
             binding.root.setOnClickListener {
-                mostPopularProduct.idMeal?.let(onPopularClick)
+                mostPopularProduct.idMeal?.let( onPopularClick )
             }
         }
     }
