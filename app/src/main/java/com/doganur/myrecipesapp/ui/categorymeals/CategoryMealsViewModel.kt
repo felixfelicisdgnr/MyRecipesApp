@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModel
 import com.doganur.myrecipesapp.db.MealRepository
 import com.doganur.myrecipesapp.db.model.MealsByCategory
 
-class CategoryMealsViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
+class CategoryMealsViewModel(
+    savedStateHandle: SavedStateHandle
+) : ViewModel() {
 
     private val mealRepository = MealRepository()
 
@@ -16,14 +18,13 @@ class CategoryMealsViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
         get() = _mealsByCategoryDetailList
 
     init {
-        savedStateHandle.get<String>("mealsByCategoryDetailId")?.let {
-            getCategoriesDetailMeal(it)
+        savedStateHandle.get<String>("categoriesId")?.let {
+            getCategoriesMeal(it)
         }
     }
 
-    private fun getCategoriesDetailMeal(mealsByCategoryDetailId : String) {
+    private fun getCategoriesMeal(mealsByCategoryDetailId : String) {
         mealRepository.getMealsByCategory(mealsByCategoryDetailId)
         _mealsByCategoryDetailList = mealRepository.mealsByCategoryList
     }
-
 }

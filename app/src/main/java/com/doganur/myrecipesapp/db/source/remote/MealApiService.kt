@@ -2,6 +2,7 @@ package com.doganur.myrecipesapp.db.source.remote
 
 import com.doganur.myrecipesapp.common.Constants
 import com.doganur.myrecipesapp.common.Constants.GET_CATEGORIES
+import com.doganur.myrecipesapp.common.Constants.GET_MEALS_BY_CATEGORY
 import com.doganur.myrecipesapp.common.Constants.GET_POPUlAR_ITEMS
 import com.doganur.myrecipesapp.common.Constants.GET_RANDOM_MEAL
 import com.doganur.myrecipesapp.db.model.CategoryList
@@ -25,7 +26,7 @@ interface MealApiService {
     @GET(Constants.GET_MEAL_DETAILS)
     fun getMealDetail(@Query("i") id: String): Call<MealList>
 
-    @GET(Constants.GET_MEALS_BY_CATEGORY)
+    @GET(GET_MEALS_BY_CATEGORY)
     fun getMealsByCategory(@Query("c") categoryName: String) : Call<MealsByCategoryList>
 
 }

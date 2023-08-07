@@ -68,7 +68,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun onCategoriesClick(categoriesId : String){
         val action = HomeFragmentDirections.categoryToCategories(categoriesId)
         findNavController().navigate(action)
-        Log.e("ZIKKIMZIKKIM", categoriesId)
+        Log.e("TEST TEST NATURE ", categoriesId)
     }
 }
 

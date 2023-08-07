@@ -98,9 +98,8 @@ class MealRepository {
             }
 
             override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {
-                Log.d("failure Popular Meals", t.message.orEmpty())
+                Log.d("Failure Popular Meals", t.message.orEmpty())
             }
-
         })
     }
 }

@@ -17,8 +17,6 @@ class MealViewModel(
     val mealDetail: LiveData<Meal?> //dinledim
         get() = _mealDetail
 
-
-
     init {
         savedStateHandle.get<String>("mealId")?.let {
             getMealDetail(it)
@@ -29,6 +27,4 @@ class MealViewModel(
         mealRepository.getMealDetail(mealId)
         _mealDetail = mealRepository.mealDetail
     }
-
-
 }

@@ -34,7 +34,7 @@ class CategoriesAdapter(
                 Glide.with(imgCategory).load(productCategory.strCategoryThumb).into(imgCategory)
 
                 root.setOnClickListener {
-                    productCategory.strCategory?.let ( onCategoriesClick ) //geber zıkkım verisi viewmodela git
+                    productCategory.strCategory?.let { onCategoriesClick(productCategory.strCategory)} //geber zıkkım verisi viewmodela git
                     Log.e("TEST CATEGORIES ADAPTER", productCategory.strCategory.toString())
                 }
             }
@@ -44,7 +44,7 @@ class CategoriesAdapter(
 
 class CategoryDiff : DiffUtil.ItemCallback<Category>() {
     override fun areItemsTheSame(oldItem: Category, newItem: Category): Boolean {
-        return oldItem.idCategory == newItem.idCategory
+        return oldItem.strCategory == newItem.strCategory
     }
 
     override fun areContentsTheSame(oldItem: Category, newItem: Category): Boolean {

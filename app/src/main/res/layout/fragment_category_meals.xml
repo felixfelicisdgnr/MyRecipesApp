@@ -13,10 +13,11 @@
         android:fontFamily="@font/myfont"
         android:textColor="@color/accent"
         android:textSize="@dimen/_15ssp"
+        android:text="@string/deneme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/_5sdp" />
+        android:layout_marginTop="@dimen/_40sdp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategoryMealsFragment"

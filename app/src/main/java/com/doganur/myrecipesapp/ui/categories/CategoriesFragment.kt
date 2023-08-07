@@ -10,7 +10,7 @@ import com.doganur.myrecipesapp.common.viewBinding
 import com.doganur.myrecipesapp.databinding.FragmentCategoriesBinding
 
 
-class CategoriesFragment : Fragment() {
+class CategoriesFragment : Fragment(R.layout.fragment_categories) {
 
     private val binding by viewBinding (FragmentCategoriesBinding::bind)
 
