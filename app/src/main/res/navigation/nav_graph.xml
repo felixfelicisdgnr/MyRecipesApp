@@ -15,6 +15,12 @@
         <action
             android:id="@+id/categoryToCategories"
             app:destination="@id/categoryMealsFragment" />
+        <action
+            android:id="@+id/homeToCategoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/homeTofavouritesFragment"
+            app:destination="@id/favouritesFragment" />
     </fragment>
 
     <fragment
@@ -35,4 +41,14 @@
             android:name="categoriesId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.doganur.myrecipesapp.ui.categories.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.doganur.myrecipesapp.ui.favourites.FavouritesFragment"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites" />
 </navigation>

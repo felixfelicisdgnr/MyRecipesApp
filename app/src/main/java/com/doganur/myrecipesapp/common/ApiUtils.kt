@@ -13,5 +13,4 @@ object ApiUtils {
         .build()
 
     val mealApiService: MealApiService by lazy { retrofit.create(MealApiService::class.java) }
-
 }

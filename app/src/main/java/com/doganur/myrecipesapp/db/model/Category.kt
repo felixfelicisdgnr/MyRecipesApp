@@ -1,6 +1,5 @@
 package com.doganur.myrecipesapp.db.model
 
-
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 

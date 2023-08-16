@@ -1,6 +1,5 @@
 package com.doganur.myrecipesapp.ui.categorymeals
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -21,7 +20,6 @@ class CategoryMealsAdapter(
     }
 
     override fun onBindViewHolder(holder: CategoryMealsViewHolder, position: Int) {
-        Log.d("FUCK", itemCount.toString())
         holder.bind(currentList[position])
     }
 
@@ -37,7 +35,11 @@ class CategoryMealsAdapter(
                 tvMealName.text = mealsByCategoryProduct.strMeal
 
                 root.setOnClickListener {
-                    mealsByCategoryProduct.strMeal?.let {onCategoryMealsClick(mealsByCategoryProduct.strMeal)}
+                    mealsByCategoryProduct.strMeal?.let {
+                        onCategoryMealsClick(
+                            mealsByCategoryProduct.strMeal
+                        )
+                    }
                 }
             }
         }

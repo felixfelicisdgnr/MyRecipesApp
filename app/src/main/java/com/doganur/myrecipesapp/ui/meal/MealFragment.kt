@@ -23,12 +23,10 @@ class MealFragment : Fragment(R.layout.fragment_meal) {
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(meal?.strYoutube.toString()))
                     startActivity(intent)
           } */
-
         initObservers()
     }
 
     private fun initObservers() {
-
         with(binding) {
             mealViewModel.mealDetail.observe(viewLifecycleOwner) { meal ->
 
