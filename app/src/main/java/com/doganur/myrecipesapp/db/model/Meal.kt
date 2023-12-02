@@ -1,13 +1,13 @@
 package com.doganur.myrecipesapp.db.model
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Parcelize
+@Entity(tableName = "mealInformation")
 data class Meal(
-
-    val dateModified: String?,
-    val idMeal: String?,
+    val dateModified: Any?,
+    @PrimaryKey
+    val idMeal: String,
     val strArea: String?,
     val strCategory: String?,
     val strCreativeCommonsConfirmed: String?,
@@ -59,4 +59,4 @@ data class Meal(
     val strSource: String?,
     val strTags: String?,
     val strYoutube: String?
-) : Parcelable
+)

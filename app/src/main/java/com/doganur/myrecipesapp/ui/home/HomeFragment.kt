@@ -60,7 +60,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
     }
 
-    private fun onPopularClick(mealId: String) {
+    private fun onPopularClick(mealId : String) {
         val action = HomeFragmentDirections.homeToMeal(mealId)
         findNavController().navigate(action)
     }

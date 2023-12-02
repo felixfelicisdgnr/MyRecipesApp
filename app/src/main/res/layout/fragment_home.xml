@@ -59,7 +59,6 @@
                 app:layout_constraintStart_toStartOf="@id/linearHeader" />
 
             <androidx.cardview.widget.CardView
-
                 android:id="@+id/cardRandomMeal"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_160sdp"
@@ -112,7 +111,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/myfont"
                 android:text="@string/categories"
                 android:textColor="@color/black"
                 android:textSize="17sp"
@@ -136,8 +134,8 @@
                     android:layout_height="match_parent"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="3"
-                    android:scrollbars="none" />
-
+                    android:scrollbars="none"
+                    tools:listitem="@layout/category_item"/>
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

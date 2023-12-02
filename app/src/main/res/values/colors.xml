@@ -16,4 +16,12 @@
     <color name="uiFive">#fb8500</color>
 
     <color name="g_black">#023047</color>
+
+    <color name="grey">#B3A7AD</color>
+    <color name="alt_white">#F6F8FB</color>
+    <color name="blue">#4089AF</color>
+    <color name="alt_blue">#5E8FA8</color>
+    <color name="alt_blue_darker">#236C97</color>
+    <color name="alt_red">#F45958</color>
+    <color name="dark">#343B42</color>
 </resources>

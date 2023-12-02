@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.favouritesFragment,
                 R.id.categoriesFragment -> {
                     binding.btnNav.isGone = false
+                } else -> {
+                    binding.btnNav.isGone = true
                 }
             }
         }

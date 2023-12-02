@@ -29,7 +29,7 @@ class MealRepository {
             ) {
                 val meals = response.body()?.meals
 
-                randomMeal.value = if (meals.isNullOrEmpty()) null else meals.random()
+                randomMeal.value =  meals?.random()
             }
 
             override fun onFailure(call: Call<MealList>, t: Throwable) {
@@ -45,7 +45,7 @@ class MealRepository {
             ) {
                 val categories = response.body()?.categories
 
-                categoriesMealList.value = if (categories.isNullOrEmpty()) null else categories
+                categoriesMealList.value = categories
             }
 
             override fun onFailure(call: Call<CategoryList>, t: Throwable) {
@@ -61,7 +61,7 @@ class MealRepository {
             ) {
                 val popularMeals = response.body()?.meals
 
-                mealsByCategoryList.value = if (popularMeals.isNullOrEmpty()) null else popularMeals
+                mealsByCategoryList.value =  popularMeals
             }
 
             override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {
@@ -94,7 +94,7 @@ class MealRepository {
             ) {
                 val categoriesMealsDetails = response.body()?.meals
 
-                mealsByCategoryList.value = if (categoriesMealsDetails.isNullOrEmpty()) null else categoriesMealsDetails
+                mealsByCategoryList.value = categoriesMealsDetails
             }
 
             override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {

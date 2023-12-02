@@ -4,6 +4,7 @@ plugins {
     id "androidx.navigation.safeargs.kotlin"
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+
 }
 
 android {
@@ -91,8 +92,7 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:2.5.2"
     // To use Kotlin annotation processing tool (kapt)
     kapt "androidx.room:room-compiler:2.5.2"
-    // optional - Kotlin Extensions and Coroutines support for Room
+
     implementation "androidx.room:room-ktx:2.5.2"
-    // optional - RxJava3 support for Room
     implementation "androidx.room:room-rxjava3:2.5.2"
 }
