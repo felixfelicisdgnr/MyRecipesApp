@@ -29,6 +29,7 @@ class MealDetailViewModel @Inject constructor(
     private val _isFavorite = MutableLiveData<Boolean>()
     val isFavorite: LiveData<Boolean> = _isFavorite
 
+
     init {
         savedStateHandle.get<String>("mealId")?.let {
             getMealDetail(it)
@@ -50,6 +51,10 @@ class MealDetailViewModel @Inject constructor(
         viewModelScope.launch {
             deleteFavoriteMealUseCase(meal)
         }
+    }
+
+    fun checkMealInFavourite(mealId: String) {
+
     }
 
 }
