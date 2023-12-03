@@ -1,11 +1,11 @@
-package com.doganur.myrecipesapp.db
+package com.doganur.myrecipesapp.db.repository
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.doganur.myrecipesapp.common.ApiUtils
 import com.doganur.myrecipesapp.db.model.Category
 import com.doganur.myrecipesapp.db.model.CategoryList
-import com.doganur.myrecipesapp.db.model.Meal
+import com.doganur.myrecipesapp.db.model.entity.Meal
 import com.doganur.myrecipesapp.db.model.MealList
 import com.doganur.myrecipesapp.db.model.MealsByCategory
 import com.doganur.myrecipesapp.db.model.MealsByCategoryList

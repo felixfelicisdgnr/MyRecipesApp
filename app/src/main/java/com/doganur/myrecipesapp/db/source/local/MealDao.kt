@@ -6,15 +6,15 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.doganur.myrecipesapp.db.model.Meal
+import com.doganur.myrecipesapp.db.model.entity.Meal
 
 @Dao
 interface MealDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(meal: Meal)
+    fun addToFavouriteMeal(meal: Meal)
 
     @Delete
-    fun delete(meal: Meal)
+    fun deleteMeal(meal: Meal)
 
     @Query("SELECT * FROM mealInformation")
     fun getAllMeals(): LiveData<List<Meal>>

@@ -9,11 +9,11 @@ import com.doganur.myrecipesapp.R
 import com.doganur.myrecipesapp.common.viewBinding
 import com.doganur.myrecipesapp.databinding.FragmentCategoryMealsBinding
 
-class CategoryMealsFragment : Fragment(R.layout.fragment_category_meals) {
+class MealCategoriesFragment : Fragment(R.layout.fragment_category_meals) {
 
     private val binding by viewBinding(FragmentCategoryMealsBinding::bind)
 
-    private val categoryMealsViewModel: CategoryMealsViewModel by viewModels()
+    private val mealCategoriesViewModel: MealCategoriesViewModel by viewModels()
 
     private val categoryMealsAdapter by lazy { CategoryMealsAdapter(::onCategoryMealsClick) }
 
@@ -26,7 +26,7 @@ class CategoryMealsFragment : Fragment(R.layout.fragment_category_meals) {
     private fun initObservers() {
 
         with(binding) {
-            categoryMealsViewModel.mealsByCategoryDetailList.observe(viewLifecycleOwner) {
+            mealCategoriesViewModel.mealsByCategoryDetailList.observe(viewLifecycleOwner) {
                 if (!it.isNullOrEmpty()) {
 
                     rvCategoryMealsFragment.adapter = categoryMealsAdapter
