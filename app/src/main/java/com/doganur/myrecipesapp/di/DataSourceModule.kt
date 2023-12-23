@@ -1,7 +1,7 @@
 package com.doganur.myrecipesapp.di
 
-import com.doganur.myrecipesapp.db.source.local.LocalDataSourceImpl
-import com.doganur.myrecipesapp.db.source.local.MealDao
+import com.doganur.myrecipesapp.data.source.local.LocalDataSourceImpl
+import com.doganur.myrecipesapp.data.source.local.MealDao
 import com.doganur.myrecipesapp.domain.datasource.local.LocalDataSource
 import dagger.Module
 import dagger.Provides

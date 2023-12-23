@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.doganur.myrecipesapp.databinding.PopularItemBinding
-import com.doganur.myrecipesapp.db.model.MealsByCategory
+import com.doganur.myrecipesapp.data.model.MealsByCategory
 
 class MostPopularAdapter(
     private val onPopularClick: (String) -> Unit

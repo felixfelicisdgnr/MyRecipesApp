@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.doganur.myrecipesapp.databinding.CategoryItemBinding
-import com.doganur.myrecipesapp.db.model.Category
+import com.doganur.myrecipesapp.data.model.Category
 
 class CategoriesAdapter(
     private val onCategoriesClick : (String) -> Unit

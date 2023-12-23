@@ -1,28 +1,28 @@
-package com.doganur.myrecipesapp.db.repository
+package com.doganur.myrecipesapp.data.repository
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.doganur.myrecipesapp.common.ApiUtils
-import com.doganur.myrecipesapp.db.model.Category
-import com.doganur.myrecipesapp.db.model.CategoryList
-import com.doganur.myrecipesapp.db.model.entity.Meal
-import com.doganur.myrecipesapp.db.model.MealList
-import com.doganur.myrecipesapp.db.model.MealsByCategory
-import com.doganur.myrecipesapp.db.model.MealsByCategoryList
+import com.doganur.myrecipesapp.data.model.Category
+import com.doganur.myrecipesapp.data.model.CategoryList
+import com.doganur.myrecipesapp.data.model.entity.Meal
+import com.doganur.myrecipesapp.data.model.MealList
+import com.doganur.myrecipesapp.data.model.MealsByCategory
+import com.doganur.myrecipesapp.data.model.MealsByCategoryList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MealRepository {
 
-    private val service = ApiUtils.mealApiService
+    private val service = ApiUtils.mealService
 
     val randomMeal = MutableLiveData<Meal?>()
     val categoriesMealList = MutableLiveData<List<Category>?>()
     val mealsByCategoryList = MutableLiveData<List<MealsByCategory>?>()
     val mealDetail = MutableLiveData<Meal?>()
 
-    fun getRandomMeal() {
+   /* fun getRandomMeal() {
         service.getRandomMeal().enqueue(object : Callback<MealList> {
             override fun onResponse(
                 call: Call<MealList>, response: Response<MealList>
@@ -101,5 +101,5 @@ class MealRepository {
                 Log.d("Failure Popular Meals", t.message.orEmpty())
             }
         })
-    }
+    } */
 }

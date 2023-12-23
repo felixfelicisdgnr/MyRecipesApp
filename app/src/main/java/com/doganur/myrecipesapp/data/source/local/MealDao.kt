@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.db.source.local
+package com.doganur.myrecipesapp.data.source.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -6,7 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.doganur.myrecipesapp.db.model.entity.Meal
+import com.doganur.myrecipesapp.data.model.entity.Meal
 
 @Dao
 interface MealDao {
@@ -14,8 +14,8 @@ interface MealDao {
     fun addToFavouriteMeal(meal: Meal)
 
     @Delete
-    fun deleteMeal(meal: Meal)
+    fun deleteFavouriteMeal(meal: Meal)
 
     @Query("SELECT * FROM mealInformation")
-    fun getAllMeals(): LiveData<List<Meal>>
+    fun getAllFavouriteMeal(): LiveData<List<Meal>>
 }

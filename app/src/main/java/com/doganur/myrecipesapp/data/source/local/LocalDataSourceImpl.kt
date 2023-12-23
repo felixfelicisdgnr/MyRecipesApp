@@ -1,7 +1,7 @@
-package com.doganur.myrecipesapp.db.source.local
+package com.doganur.myrecipesapp.data.source.local
 
 import androidx.lifecycle.LiveData
-import com.doganur.myrecipesapp.db.model.entity.Meal
+import com.doganur.myrecipesapp.data.model.entity.Meal
 import com.doganur.myrecipesapp.domain.datasource.local.LocalDataSource
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -15,11 +15,11 @@ class LocalDataSourceImpl @Inject constructor(
         mealDao.addToFavouriteMeal(meal)
     }
 
-    override suspend fun deleteMeal(meal: Meal) = withContext(ioDispatcher) {
-        mealDao.deleteMeal(meal)
+    override suspend fun deleteFavouriteMeal(meal: Meal) = withContext(ioDispatcher) {
+        mealDao.deleteFavouriteMeal(meal)
     }
 
-    override suspend fun getAllMeals(): LiveData<List<Meal>> = withContext(ioDispatcher) {
-        mealDao.getAllMeals()
+    override suspend fun getAllFavouriteMeals(): LiveData<List<Meal>> = withContext(ioDispatcher) {
+        mealDao.getAllFavouriteMeal()
     }
 }

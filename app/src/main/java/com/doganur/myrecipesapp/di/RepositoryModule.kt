@@ -1,6 +1,6 @@
 package com.doganur.myrecipesapp.di
 
-import com.doganur.myrecipesapp.db.repository.MealsRepositoryImpl
+import com.doganur.myrecipesapp.data.repository.MealsRepositoryImpl
 import com.doganur.myrecipesapp.domain.datasource.local.LocalDataSource
 import com.doganur.myrecipesapp.domain.datasource.remote.RemoteDataSource
 import com.doganur.myrecipesapp.domain.repository.MealsRepository

@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.db.source.local
+package com.doganur.myrecipesapp.data.source.local
 
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters

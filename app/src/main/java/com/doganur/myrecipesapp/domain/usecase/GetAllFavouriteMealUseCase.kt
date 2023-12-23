@@ -9,5 +9,5 @@ class GetAllMealUseCase @Inject constructor(
     private val mealsRepository: MealsRepository
 ) {
 
-    suspend operator fun invoke() = mealsRepository.getAllMeals()
+    suspend operator fun invoke() = mealsRepository.getAllFavouriteMeals()
 }

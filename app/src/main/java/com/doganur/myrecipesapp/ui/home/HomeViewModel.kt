@@ -3,10 +3,10 @@ package com.doganur.myrecipesapp.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.doganur.myrecipesapp.db.repository.MealRepository
-import com.doganur.myrecipesapp.db.model.Category
-import com.doganur.myrecipesapp.db.model.entity.Meal
-import com.doganur.myrecipesapp.db.model.MealsByCategory
+import com.doganur.myrecipesapp.data.repository.MealRepository
+import com.doganur.myrecipesapp.data.model.Category
+import com.doganur.myrecipesapp.data.model.entity.Meal
+import com.doganur.myrecipesapp.data.model.MealsByCategory
 
 class HomeViewModel : ViewModel() {
 

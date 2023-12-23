@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.doganur.myrecipesapp.db.repository.MealRepository
-import com.doganur.myrecipesapp.db.model.MealsByCategory
+import com.doganur.myrecipesapp.data.repository.MealRepository
+import com.doganur.myrecipesapp.data.model.MealsByCategory
 
 class MealCategoriesViewModel(
     savedStateHandle: SavedStateHandle

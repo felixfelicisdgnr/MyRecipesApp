@@ -5,10 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.doganur.myrecipesapp.db.repository.MealRepository
-import com.doganur.myrecipesapp.db.model.entity.Meal
+import com.doganur.myrecipesapp.data.repository.MealRepository
+import com.doganur.myrecipesapp.data.model.entity.Meal
 import com.doganur.myrecipesapp.domain.usecase.DeleteFavouriteMealUseCase
-import com.doganur.myrecipesapp.domain.usecase.GetAllMealUseCase
 import com.doganur.myrecipesapp.domain.usecase.AddToFavouriteMealUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
