@@ -9,7 +9,6 @@ import javax.inject.Inject
 class DeleteFavouriteMealUseCase @Inject constructor(
     private val mealsRepository: MealsRepository
 ) {
-
     suspend operator fun invoke(mealId: Meal) {
         mealsRepository.deleteFavouriteMeal(mealId)
     }

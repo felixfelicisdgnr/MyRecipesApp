@@ -15,17 +15,17 @@ import retrofit2.http.Query
 interface MealService {
 
     @GET(GET_RANDOM_MEAL)
-    suspend fun getRandomMeal(): Call<MealList>
+    suspend fun getRandomMeal(): List<MealList>
 
     @GET(GET_CATEGORIES)
-    suspend fun getCategoriesMeal(): Call<CategoryList>
+    suspend fun getCategoriesMeal(): List<CategoryList>
 
     @GET(GET_POPUlAR_ITEMS)
-    suspend fun getMostPopularMeals( @Query("c") categoryName : String ): Call<MealsByCategoryList>
+    suspend fun getMostPopularMeals( @Query("c") categoryName : String ): List<MealsByCategoryList>
 
     @GET(Constants.GET_MEAL_DETAILS)
-    suspend fun getMealDetail(@Query("i") id: String): Call<MealList>
+    suspend fun getMealDetail(@Query("i") id: String): List<MealList>
 
     @GET(GET_MEALS_BY_CATEGORY)
-    suspend fun getMealsByCategory(@Query("c") categoryName: String) : Call<MealsByCategoryList>
+    suspend fun getMealsByCategory(@Query("c") categoryName: String) : List<MealsByCategoryList>
 }

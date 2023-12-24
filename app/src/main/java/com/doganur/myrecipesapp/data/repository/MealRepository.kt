@@ -1,28 +1,15 @@
 package com.doganur.myrecipesapp.data.repository
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import com.doganur.myrecipesapp.common.ApiUtils
-import com.doganur.myrecipesapp.data.model.Category
-import com.doganur.myrecipesapp.data.model.CategoryList
-import com.doganur.myrecipesapp.data.model.entity.Meal
-import com.doganur.myrecipesapp.data.model.MealList
-import com.doganur.myrecipesapp.data.model.MealsByCategory
-import com.doganur.myrecipesapp.data.model.MealsByCategoryList
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
 class MealRepository {
 
-    private val service = ApiUtils.mealService
+    /* private val service = ApiUtils.mealService
 
     val randomMeal = MutableLiveData<Meal?>()
     val categoriesMealList = MutableLiveData<List<Category>?>()
     val mealsByCategoryList = MutableLiveData<List<MealsByCategory>?>()
     val mealDetail = MutableLiveData<Meal?>()
 
-   /* fun getRandomMeal() {
+   fun getRandomMeal() {
         service.getRandomMeal().enqueue(object : Callback<MealList> {
             override fun onResponse(
                 call: Call<MealList>, response: Response<MealList>

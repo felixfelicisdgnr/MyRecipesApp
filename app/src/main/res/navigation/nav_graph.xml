@@ -30,16 +30,17 @@
         tools:layout="@layout/fragment_meal" >
         <argument
             android:name="mealId"
-            app:argType="string" />
+            app:argType="com.doganur.myrecipesapp.data.model.Category" />
     </fragment>
     <fragment
         android:id="@+id/categoryMealsFragment"
         android:name="com.doganur.myrecipesapp.ui.categorymeals.MealCategoriesFragment"
         android:label="fragment_category_meals"
         tools:layout="@layout/fragment_category_meals" >
+
         <argument
             android:name="categoriesId"
-            app:argType="string" />
+            app:argType="com.doganur.myrecipesapp.data.model.MealsByCategory" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"

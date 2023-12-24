@@ -2,6 +2,8 @@ package com.doganur.myrecipesapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.doganur.myrecipesapp.data.source.local.LocalDatabaseService
+import com.doganur.myrecipesapp.data.source.local.MealDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,5 +15,17 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RoomDatabaseServiceModule {
 
+    @Provides
+    @Singleton
+    fun provideFavoritesRoomDB(context: Context): LocalDatabaseService =
+        Room.databaseBuilder(
+            context,
+            LocalDatabaseService::class.java,
+            "mealdetail.data"
+        ).fallbackToDestructiveMigration().build()
 
+    @Provides
+    @Singleton
+    fun provideProductFavoriteDAO(favoritesRoomDB: LocalDatabaseService): MealDao =
+        favoritesRoomDB.mealDao()
 }

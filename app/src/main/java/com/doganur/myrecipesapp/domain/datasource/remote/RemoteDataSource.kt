@@ -7,13 +7,13 @@ import retrofit2.Call
 
 interface RemoteDataSource {
 
-    suspend fun getRandomMeal(): Call<MealList>
+    suspend fun getRandomMeal(): List<MealList>
 
-    suspend fun getCategoriesMeal(): Call<CategoryList>
+    suspend fun getCategoriesMeal(): List<CategoryList>
 
-    suspend fun getMostPopularMeals(categoryName : String): Call<MealsByCategoryList>
+    suspend fun getMostPopularMeals(categoryName : String): List<MealsByCategoryList>
 
-    suspend fun getMealDetail(id: String): Call<MealList>
+    suspend fun getMealDetail(id: String): List<MealList>
 
-    suspend fun getMealsByCategory(categoryName: String): Call<MealsByCategoryList>
+    suspend fun getMealsByCategory(categoryName: String): List<MealsByCategoryList>
 }

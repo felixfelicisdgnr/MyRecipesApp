@@ -16,35 +16,28 @@ class MealsRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource
 ) : MealsRepository {
 
-    override suspend fun getRandomMeal(): Call<MealList> {
-        TODO("Not yet implemented")
+    override suspend fun getRandomMeal(): List<MealList> {
+        return remoteDataSource.getRandomMeal()
     }
 
-    override suspend fun getCategoriesMeal(): Call<CategoryList> {
-        TODO("Not yet implemented")
+    override suspend fun getCategoriesMeal(): List<CategoryList> {
+        return remoteDataSource.getCategoriesMeal()
+    }
+    override suspend fun getMostPopularMeals(categoryName: String): List<MealsByCategoryList> {
+        return remoteDataSource.getMostPopularMeals(categoryName)
     }
 
-    override suspend fun getMostPopularMeals(categoryName: String): Call<MealsByCategoryList> {
-        TODO("Not yet implemented")
+    override suspend fun getMealDetail(id: String): List<MealList> {
+        return remoteDataSource.getMealDetail(id)
     }
 
-    override suspend fun getMealDetail(id: String): Call<MealList> {
-        TODO("Not yet implemented")
+    override suspend fun getMealsByCategory(categoryName: String): List<MealsByCategoryList> {
+        return remoteDataSource.getMealsByCategory(categoryName)
     }
 
-    override suspend fun getMealsByCategory(categoryName: String): Call<MealsByCategoryList> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getAllFavouriteMeals(): LiveData<List<Meal>>  = localDataSource.getAllFavouriteMeals()
 
-    override suspend fun addToFavouriteMeal(meal: Meal) {
-        TODO("Not yet implemented")
-    }
+    override suspend fun addToFavouriteMeal(meal: Meal)  = localDataSource.addToFavouriteMeal(meal)
 
-    override suspend fun deleteFavouriteMeal(meal: Meal) {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun getAllFavouriteMeals(): LiveData<List<Meal>> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun deleteFavouriteMeal(meal: Meal) = localDataSource.deleteFavouriteMeal(meal)
 }
