@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.categorymeals
+package com.doganur.myrecipesapp.ui.mealcategories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.doganur.myrecipesapp.databinding.MealItemBinding
-import com.doganur.myrecipesapp.data.model.MealsByCategory
+import com.doganur.myrecipesapp.data.model.MealsByCategoryForPopular
 
 class CategoryMealsAdapter(
     private val onCategoryMealsClick: (String) -> Unit
-) : ListAdapter<MealsByCategory, CategoryMealsAdapter.CategoryMealsViewHolder>(CategoryDiff()) {
+) : ListAdapter<MealsByCategoryForPopular, CategoryMealsAdapter.CategoryMealsViewHolder>(CategoryDiff()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryMealsViewHolder {
         val binding =
@@ -26,18 +26,18 @@ class CategoryMealsAdapter(
     inner class CategoryMealsViewHolder(
         private val binding: MealItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(mealsByCategoryProduct: MealsByCategory) {
+        fun bind(mealsByCategoryForPopularProduct: MealsByCategoryForPopular) {
 
             with(binding) {
 
-                Glide.with(imgMeal).load(mealsByCategoryProduct.strMealThumb).into(imgMeal)
+                Glide.with(imgMeal).load(mealsByCategoryForPopularProduct.strMealThumb).into(imgMeal)
 
-                tvMealName.text = mealsByCategoryProduct.strMeal
+                tvMealName.text = mealsByCategoryForPopularProduct.strMeal
 
                 root.setOnClickListener {
-                    mealsByCategoryProduct.strMeal?.let {
+                    mealsByCategoryForPopularProduct.strMeal?.let {
                         onCategoryMealsClick(
-                            mealsByCategoryProduct.strMeal
+                            mealsByCategoryForPopularProduct.strMeal
                         )
                     }
                 }
@@ -46,12 +46,12 @@ class CategoryMealsAdapter(
     }
 }
 
-class CategoryDiff : DiffUtil.ItemCallback<MealsByCategory>() {
-    override fun areItemsTheSame(oldItem: MealsByCategory, newItem: MealsByCategory): Boolean {
+class CategoryDiff : DiffUtil.ItemCallback<MealsByCategoryForPopular>() {
+    override fun areItemsTheSame(oldItem: MealsByCategoryForPopular, newItem: MealsByCategoryForPopular): Boolean {
         return oldItem.idMeal == newItem.idMeal
     }
 
-    override fun areContentsTheSame(oldItem: MealsByCategory, newItem: MealsByCategory): Boolean {
+    override fun areContentsTheSame(oldItem: MealsByCategoryForPopular, newItem: MealsByCategoryForPopular): Boolean {
         return oldItem == newItem
     }
 }

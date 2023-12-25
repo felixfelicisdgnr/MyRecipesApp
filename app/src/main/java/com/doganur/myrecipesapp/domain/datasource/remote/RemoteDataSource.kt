@@ -3,7 +3,6 @@ package com.doganur.myrecipesapp.domain.datasource.remote
 import com.doganur.myrecipesapp.data.model.CategoryList
 import com.doganur.myrecipesapp.data.model.MealList
 import com.doganur.myrecipesapp.data.model.MealsByCategoryList
-import retrofit2.Call
 
 interface RemoteDataSource {
 
@@ -11,7 +10,7 @@ interface RemoteDataSource {
 
     suspend fun getCategoriesMeal(): List<CategoryList>
 
-    suspend fun getMostPopularMeals(categoryName : String): List<MealsByCategoryList>
+    suspend fun getMostPopularMeals(categoryName: String): List<MealsByCategoryList>
 
     suspend fun getMealDetail(id: String): List<MealList>
 

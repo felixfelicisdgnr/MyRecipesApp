@@ -34,13 +34,13 @@
     </fragment>
     <fragment
         android:id="@+id/categoryMealsFragment"
-        android:name="com.doganur.myrecipesapp.ui.categorymeals.MealCategoriesFragment"
+        android:name="com.doganur.myrecipesapp.ui.mealcategories.MealCategoriesFragment"
         android:label="fragment_category_meals"
         tools:layout="@layout/fragment_category_meals" >
 
         <argument
             android:name="categoriesId"
-            app:argType="com.doganur.myrecipesapp.data.model.MealsByCategory" />
+            app:argType="com.doganur.myrecipesapp.data.model.MealsByCategoryForPopular" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"

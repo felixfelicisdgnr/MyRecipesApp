@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.categorymeals
+package com.doganur.myrecipesapp.ui.mealcategories
 
 import android.os.Bundle
 import android.view.View
@@ -26,7 +26,7 @@ class MealCategoriesFragment : Fragment(R.layout.fragment_category_meals) {
     private fun initObservers() {
 
         with(binding) {
-            mealCategoriesViewModel.mealsByCategoryDetailList.observe(viewLifecycleOwner) {
+            mealCategoriesViewModel.mealsByCategoryForPopularDetailList.observe(viewLifecycleOwner) {
                 if (!it.isNullOrEmpty()) {
 
                     rvCategoryMealsFragment.adapter = categoryMealsAdapter

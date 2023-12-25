@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.doganur.myrecipesapp.databinding.PopularItemBinding
-import com.doganur.myrecipesapp.data.model.MealsByCategory
+import com.doganur.myrecipesapp.data.model.MealsByCategoryForPopular
 
 class MostPopularAdapter(
     private val onPopularClick: (String) -> Unit
-) : ListAdapter<MealsByCategory, MostPopularAdapter.MostPopularViewHolder>(
+) : ListAdapter<MealsByCategoryForPopular, MostPopularAdapter.MostPopularViewHolder>(
     MostPopularDiffUtilCallback
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MostPopularViewHolder {
@@ -27,7 +27,7 @@ class MostPopularAdapter(
         private val binding: PopularItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(mostPopularProduct: MealsByCategory) {
+        fun bind(mostPopularProduct: MealsByCategoryForPopular) {
 
             Glide.with(binding.imgPopularMealItems).load(mostPopularProduct.strMealThumb)
                 .into(binding.imgPopularMealItems)
@@ -39,10 +39,10 @@ class MostPopularAdapter(
     }
 }
 
-object MostPopularDiffUtilCallback : DiffUtil.ItemCallback<MealsByCategory>() {
-    override fun areItemsTheSame(oldItem: MealsByCategory, newItem: MealsByCategory) =
+object MostPopularDiffUtilCallback : DiffUtil.ItemCallback<MealsByCategoryForPopular>() {
+    override fun areItemsTheSame(oldItem: MealsByCategoryForPopular, newItem: MealsByCategoryForPopular) =
         oldItem.idMeal == newItem.idMeal
 
-    override fun areContentsTheSame(oldItem: MealsByCategory, newItem: MealsByCategory) =
+    override fun areContentsTheSame(oldItem: MealsByCategoryForPopular, newItem: MealsByCategoryForPopular) =
         oldItem == newItem
 }

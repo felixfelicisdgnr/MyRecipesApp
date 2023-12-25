@@ -5,10 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.doganur.myrecipesapp.data.repository.MealRepository
 import com.doganur.myrecipesapp.data.model.entity.Meal
-import com.doganur.myrecipesapp.domain.usecase.DeleteFavouriteMealUseCase
 import com.doganur.myrecipesapp.domain.usecase.AddToFavouriteMealUseCase
+import com.doganur.myrecipesapp.domain.usecase.DeleteFavouriteMealUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,10 +19,8 @@ class MealDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val mealRepository = MealRepository()
-
     private var _mealDetail = MutableLiveData<Meal?>() //doldurdum
-    val mealDetail: LiveData<Meal?>  = _mealDetail //dinledim
+    val mealDetail: LiveData<Meal?> = _mealDetail //dinledim
 
     private val _isFavorite = MutableLiveData<Boolean>()
     val isFavorite: LiveData<Boolean> = _isFavorite
@@ -36,8 +33,8 @@ class MealDetailViewModel @Inject constructor(
     }
 
     private fun getMealDetail(mealId: String) {
-        mealRepository.getMealDetail(mealId)
-        _mealDetail = mealRepository.mealDetail
+        // mealRepository.getMealDetail(mealId)
+        //_mealDetail = mealRepository.mealDetail
     }
 
     fun addToFavouriteMeal(meal: Meal) {
