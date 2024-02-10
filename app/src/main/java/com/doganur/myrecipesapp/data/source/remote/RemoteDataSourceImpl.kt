@@ -10,15 +10,15 @@ import javax.inject.Inject
 class RemoteDataSourceImpl @Inject constructor(
     private val mealService: MealService
 ) : RemoteDataSource {
-    override suspend fun getRandomMeal(): Call<MealList> = mealService.getRandomMeal()
+    override suspend fun getRandomMeal(): List<MealList> = mealService.getRandomMeal()
 
-    override suspend fun getCategoriesMeal(): Call<CategoryList> = mealService.getCategoriesMeal()
+    override suspend fun getCategoriesMeal(): List<CategoryList> = mealService.getCategoriesMeal()
 
-    override suspend fun getMostPopularMeals(categoryName: String): Call<MealsByCategoryList> =
+    override suspend fun getMostPopularMeals(categoryName: String): List<MealsByCategoryList> =
         mealService.getMostPopularMeals(categoryName)
 
-    override suspend fun getMealDetail(id: String): Call<MealList> = mealService.getMealDetail(id)
+    override suspend fun getMealDetail(id: String): List<MealList> = mealService.getMealDetail(id)
 
-    override suspend fun getMealsByCategory(categoryName: String): Call<MealsByCategoryList> =
+    override suspend fun getMealsByCategory(categoryName: String): List<MealsByCategoryList> =
         mealService.getMealsByCategory(categoryName)
 }

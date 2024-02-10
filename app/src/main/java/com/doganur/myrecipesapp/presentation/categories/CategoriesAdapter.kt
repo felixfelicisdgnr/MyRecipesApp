@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.categories
+package com.doganur.myrecipesapp.presentation.categories
 
 import android.util.Log
 import android.view.LayoutInflater

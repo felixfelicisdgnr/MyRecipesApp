@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.activities
+package com.doganur.myrecipesapp.presentation.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,9 @@ import androidx.navigation.ui.NavigationUI
 import com.doganur.myrecipesapp.R
 import com.doganur.myrecipesapp.common.viewBinding
 import com.doganur.myrecipesapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val binding by viewBinding(ActivityMainBinding::inflate)

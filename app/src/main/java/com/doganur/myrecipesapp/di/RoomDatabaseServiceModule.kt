@@ -17,7 +17,7 @@ object RoomDatabaseServiceModule {
 
     @Provides
     @Singleton
-    fun provideFavoritesRoomDB(context: Context): LocalDatabaseService =
+    fun provideFavoritesRoomDB(@ApplicationContext context: Context): LocalDatabaseService =
         Room.databaseBuilder(
             context,
             LocalDatabaseService::class.java,

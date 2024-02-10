@@ -9,7 +9,6 @@ import javax.inject.Inject
 class AddToFavouriteMealUseCase @Inject constructor(
     private val mealsRepository: MealsRepository
 ) {
-
     suspend operator fun invoke(meal: Meal) {
         mealsRepository.addToFavouriteMeal(meal)
     }

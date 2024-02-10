@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.di.hilt
+package com.doganur.myrecipesapp.presentation
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

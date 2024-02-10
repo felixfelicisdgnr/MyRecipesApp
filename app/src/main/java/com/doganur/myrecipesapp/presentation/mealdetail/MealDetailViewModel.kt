@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.mealdetail
+package com.doganur.myrecipesapp.presentation.mealdetail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

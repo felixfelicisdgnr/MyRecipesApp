@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.home
+package com.doganur.myrecipesapp.presentation.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

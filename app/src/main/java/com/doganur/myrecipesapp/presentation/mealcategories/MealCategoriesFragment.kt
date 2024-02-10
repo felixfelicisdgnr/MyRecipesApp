@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.mealcategories
+package com.doganur.myrecipesapp.presentation.mealcategories
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,9 @@ import androidx.fragment.app.viewModels
 import com.doganur.myrecipesapp.R
 import com.doganur.myrecipesapp.common.viewBinding
 import com.doganur.myrecipesapp.databinding.FragmentCategoryMealsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MealCategoriesFragment : Fragment(R.layout.fragment_category_meals) {
 
     private val binding by viewBinding(FragmentCategoryMealsBinding::bind)

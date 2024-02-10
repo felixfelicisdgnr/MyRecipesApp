@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.mealcategories
+package com.doganur.myrecipesapp.presentation.mealcategories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

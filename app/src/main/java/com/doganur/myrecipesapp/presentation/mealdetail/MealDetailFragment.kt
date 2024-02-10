@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.mealdetail
+package com.doganur.myrecipesapp.presentation.mealdetail
 
 import android.content.Intent
 import android.net.Uri
@@ -10,8 +10,9 @@ import com.bumptech.glide.Glide
 import com.doganur.myrecipesapp.R
 import com.doganur.myrecipesapp.common.viewBinding
 import com.doganur.myrecipesapp.databinding.FragmentMealBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MealDetailFragment : Fragment(R.layout.fragment_meal) {
 
     private val binding by viewBinding(FragmentMealBinding::bind)

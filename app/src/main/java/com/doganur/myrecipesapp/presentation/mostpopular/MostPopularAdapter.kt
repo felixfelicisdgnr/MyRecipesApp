@@ -1,4 +1,4 @@
-package com.doganur.myrecipesapp.ui.mostpopular
+package com.doganur.myrecipesapp.presentation.mostpopular
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
