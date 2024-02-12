@@ -10,16 +10,13 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/homeToMeal"
+            android:id="@+id/homeToMealDetail"
             app:destination="@id/mealFragment" />
         <action
-            android:id="@+id/categoryToCategories"
-            app:destination="@id/categoryMealsFragment" />
-        <action
-            android:id="@+id/homeToCategoriesFragment"
+            android:id="@+id/homeToCategories"
             app:destination="@id/categoriesFragment" />
         <action
-            android:id="@+id/homeTofavouritesFragment"
+            android:id="@+id/homeToFavouritesFragment"
             app:destination="@id/favouritesFragment" />
     </fragment>
 
@@ -30,23 +27,17 @@
         tools:layout="@layout/fragment_meal" >
         <argument
             android:name="mealId"
-            app:argType="com.doganur.myrecipesapp.data.model.Category" />
-    </fragment>
-    <fragment
-        android:id="@+id/categoryMealsFragment"
-        android:name="com.doganur.myrecipesapp.presentation.mealcategories.MealCategoriesFragment"
-        android:label="fragment_category_meals"
-        tools:layout="@layout/fragment_category_meals" >
-
-        <argument
-            android:name="categoriesId"
-            app:argType="com.doganur.myrecipesapp.data.model.MealsByCategoryForPopular" />
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.doganur.myrecipesapp.presentation.categories.CategoriesFragment"
+        android:name="com.doganur.myrecipesapp.presentation.home.categories.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories" >
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/favouritesFragment"
         android:name="com.doganur.myrecipesapp.presentation.favourites.FavouritesFragment"

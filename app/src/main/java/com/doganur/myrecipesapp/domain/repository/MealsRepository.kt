@@ -1,11 +1,11 @@
 package com.doganur.myrecipesapp.domain.repository
 
 import androidx.lifecycle.LiveData
-import com.doganur.myrecipesapp.data.model.CategoryList
+import com.doganur.myrecipesapp.common.Resource
+import com.doganur.myrecipesapp.data.model.Category
 import com.doganur.myrecipesapp.data.model.MealList
 import com.doganur.myrecipesapp.data.model.MealsByCategoryList
 import com.doganur.myrecipesapp.data.model.entity.Meal
-import retrofit2.Call
 
 interface MealsRepository {
 
@@ -15,11 +15,9 @@ interface MealsRepository {
 
     suspend fun getAllFavouriteMeals(): LiveData<List<Meal>>
 
-    suspend fun getRandomMeal(): List<MealList>
+    suspend fun getRandomMeal(): Resource<List<Meal>>
 
-    suspend fun getCategoriesMeal(): List<CategoryList>
-
-    suspend fun getMostPopularMeals(categoryName : String): List<MealsByCategoryList>
+    suspend fun getCategories(): Resource<List<Category>>
 
     suspend fun getMealDetail(id: String): List<MealList>
 

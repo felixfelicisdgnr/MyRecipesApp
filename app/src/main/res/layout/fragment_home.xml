@@ -4,9 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.activities.MainActivity">
+    tools:context=".presentation.main.MainActivity">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -24,13 +25,13 @@
                 android:layout_marginEnd="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" >
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/tvHome"
-                    android:layout_weight="3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="3"
                     android:fontFamily="@font/myfont"
                     android:text="@string/home"
                     android:textColor="@color/accent"
@@ -55,20 +56,20 @@
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/linearHeader"
-                app:layout_constraintStart_toStartOf="@id/linearHeader" />
+                app:layout_constraintStart_toStartOf="@id/linearHeader"
+                app:layout_constraintTop_toBottomOf="@id/linearHeader" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardRandomMeal"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_160sdp"
                 android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvWouldLikeToEat">
 
                 <ImageView
@@ -76,47 +77,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/accent"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop" />
 
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/tvOverPopular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/myfont"
-                android:text="@string/over_popular_items"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/tvWouldLikeToEat"
-                app:layout_constraintTop_toBottomOf="@id/cardRandomMeal" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMealsPopular"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvOverPopular"
-                 />
 
             <TextView
                 android:id="@+id/tvCategories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/categories"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/rvMealsPopular"
-                app:layout_constraintTop_toBottomOf="@id/rvMealsPopular" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardRandomMeal" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -125,20 +101,33 @@
                 android:layout_marginEnd="25dp"
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvCategories" >
+                app:layout_constraintTop_toBottomOf="@id/tvCategories">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvCategories"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scrollbars="none"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="3"
-                    android:scrollbars="none"
-                    tools:listitem="@layout/category_item"/>
+                    tools:listitem="@layout/category_item" />
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressBackgroundTint="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

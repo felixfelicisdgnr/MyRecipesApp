@@ -25,7 +25,6 @@ class MealDetailViewModel @Inject constructor(
     private val _isFavorite = MutableLiveData<Boolean>()
     val isFavorite: LiveData<Boolean> = _isFavorite
 
-
     init {
         savedStateHandle.get<String>("mealId")?.let {
             getMealDetail(it)
